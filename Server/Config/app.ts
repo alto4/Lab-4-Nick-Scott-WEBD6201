@@ -29,7 +29,7 @@ import * as DBConfig from './db';
 mongoose.connect(DBConfig.RemoteURI, { useNewUrlParser: true, useUnifiedTopology: true }); //change LocalURI to RemoteURI for live hosting
 
 // Enable static resources for use in EJS files
-app.use(express.static('public'))
+app.use(express.static('../../publlic/images'));
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -47,6 +47,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client/')));
 app.use(express.static(path.join(__dirname, '../../node_modules/')));
+//app.use(express.static(path.join(__dirname, '../../public')));
 
 // setup express session
 app.use(session({
@@ -91,3 +92,9 @@ app.use(function (err: createError.HttpError, req: express.Request, res: express
 });
 
 //module.exports = app;
+
+
+
+
+
+

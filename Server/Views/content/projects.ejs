@@ -1,1 +1,78 @@
-<h1>Our Projects</h1>
+<% 
+      // Store array of projects completed by Scott
+      let scottProjects = [
+        {
+          name: "The Shoppies Awards",
+          technologies: ["react", "css", "bootstrap"],
+          image: "./Assets/shoppies.jpg",
+          github: "https://github.com/alto4/ShoppiesAwardsApp",
+          demo: "https://shoppies-awards-2021.netlify.app/" 
+        },
+        {
+          name: "Currency Converter",
+          technologies: ["react", "css", "bootstrap"],
+          image: "./Assets/currency-converter.jpg",
+          github: "https://github.com/alto4/SACurrencyExchange",
+          demo: "https://sacurrency.herokuapp.com" 
+        },
+        {
+          name: "SA Corp. CRM",
+          technologies: ["php", "postgresql", "bootstrap"],
+          image: "./Assets/sacorp.jpg",
+          github: "https://github.com/alto4/SACorpPHP/tree/master/htdocs/WEBD3201/Lab4/lab4",
+          demo: "https://screenrec.com/share/8Lu5gH9Wwm" 
+        },
+      ];
+
+      // Store array of projects completed by Nick
+      let nickProjects = [
+        {
+          name: "C++ Input/Output Application",
+          technologies: ["C++"],
+          image: "./Assets/nickproj1.jpg",
+          github: "https://github.com/GarlicButterBoy/OOP3200-F2020-Lab5",
+          demo: "https://www.youtube.com/watch?v=_1iBvqUpu88" 
+        },
+        {
+          name: "JavaFX",
+          technologies: ["Java", "JavaF"],
+          image: "./Assets/nickproj2.jpg",
+          github: "https://github.com/GarlicButterBoy/OOP3200-Nick-Kaif-JavaLab5",
+          demo: "https://www.youtube.com/watch?v=rARQPHTxDQ4" 
+        },
+        {
+          name: "Simple Shares Database",
+          technologies: ["C#"],
+          image: "./Assets/nickproj1.png",
+          github: "https://github.com/GarlicButterBoy/Lab-3---NickSturchFlint",
+          demo: "#" 
+        },
+      ]
+
+    
+ %> 
+ 
+ <h1>Our Projects</h1>
+
+<div class="container mx-auto row g-lg-3 justify-content-center projects">
+  <%
+    let combinedProjects = [...scottProjects, ...nickProjects];
+
+    let projectsHTML = ''; 
+    combinedProjects.forEach(project => {
+          const { name, technologies, image, github, demo } = project;
+           projectsHTML += `
+            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
+              <h4>${name}</h4>
+              <img src="${image}" class="mx-auto" />
+              <div class="row p-4 ">
+                <a href="${github}" target="_blank" class="col-6 btn btn-dark">Code</a>
+                <a href="${demo}" target="_blank" class="col-6 btn btn-success">Demo</a>
+              </div>
+            </div>
+          `;
+        });
+  %>
+
+  <%- projectsHTML  %> 
+</div>

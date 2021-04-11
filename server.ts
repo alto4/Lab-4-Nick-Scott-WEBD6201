@@ -9,6 +9,7 @@ import debug from 'debug';
 debug('week10a:server');
 
 import http from 'http';
+import express from 'express';
 
 /**
  * Get port from environment and store in Express.
@@ -97,3 +98,6 @@ function onListening():void
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// Enable static resources for use in EJS files
+app.use(express.static('/publlic/images'));
