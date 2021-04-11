@@ -40,6 +40,7 @@ const app = express_1.default();
 exports.default = app;
 const DBConfig = __importStar(require("./db"));
 mongoose_1.default.connect(DBConfig.RemoteURI, { useNewUrlParser: true, useUnifiedTopology: true });
+app.use(express_1.default.static('public'));
 const db = mongoose_1.default.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {

@@ -1,3 +1,3 @@
-# WEBD6201-W2021-ICE11b
+# WEBD6201-LAB4
 
-This is a demo project for ICE 11
+This is Lab 4 for WEBD6201 by Scott Alton and Nick Sturch-Flint
