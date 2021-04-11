@@ -43,7 +43,7 @@ mongoose_1.default.connect(DBConfig.RemoteURI, { useNewUrlParser: true, useUnifi
 const db = mongoose_1.default.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-    console.log(`Connected to MongoDB at: ${DBConfig.Host}`);
+    console.log(`Connected to MongoDB at: ${DBConfig.localHost}`);
 });
 app.set('views', path_1.default.join(__dirname, '../Views/'));
 app.set('view engine', 'ejs');

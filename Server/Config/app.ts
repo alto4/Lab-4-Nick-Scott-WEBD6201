@@ -26,12 +26,12 @@ export default app;
 
 // DB configuration
 import * as DBConfig from './db';
-mongoose.connect(DBConfig.RemoteURI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(DBConfig.RemoteURI, { useNewUrlParser: true, useUnifiedTopology: true }); //change LocalURI to RemoteURI for live hosting
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log(`Connected to MongoDB at: ${DBConfig.Host}`);
+db.once('open', function () {
+  console.log(`Connected to MongoDB at: ${DBConfig.localHost}`);  //remove local from localHost to host live
 });
 
 // view engine setup
@@ -71,12 +71,12 @@ app.use('/', indexRouter);
 app.use('/contact-list', contactListRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err:createError.HttpError, req:express.Request, res:express.Response, next:express.NextFunction) {
+app.use(function (err: createError.HttpError, req: express.Request, res: express.Response, next: express.NextFunction) {
   // set locals, only providing error in development
 
   let message = err.message;
@@ -84,7 +84,7 @@ app.use(function(err:createError.HttpError, req:express.Request, res:express.Res
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {message: message, error:error, title: '', page: '', displayName: ''});
+  res.render('error', { message: message, error: error, title: '', page: '', displayName: '' });
 });
 
 //module.exports = app;

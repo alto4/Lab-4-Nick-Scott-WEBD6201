@@ -1,4 +1,6 @@
-export const LocalURI = "mongodb://localhost/webd6201";
-export const RemoteURI = "mongodb+srv://thomas:5wWyrxbVa59twJoh@webd6201.zvqij.mongodb.net/webd6201?retryWrites=true&w=majority";
+export const LocalURI = "mongodb://localhost/webd6201"; //for local testing
+export const RemoteURI = "mongodb+srv://altons:Toronto4@webd6201.u1de4.mongodb.net/portfoliosite?retryWrites=true&w=majority"; //live db
 export const Secret = "someSecret";
-export const Host = "MongoDB Atlas";
+export const Host = "MongoDB Atlas"; //for live hosting
+export const localHost = "localhost"; //for local testing
+
