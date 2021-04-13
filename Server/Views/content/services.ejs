@@ -1,1 +1,81 @@
-<h1>Our Services</h1>
+<% 
+      // Store array of projects completed by Scott
+      let scottServices = [
+      {
+        serviceType: "Web Development",
+        name: "Scott Alton",
+        image: "./Assets/webdev.jpeg",
+        content:
+          "Help improve your businesses online presence with a new, customized website.",
+      },
+      {
+        serviceType: "Web Design",
+        name: "Scott Alton",
+        image: "./Assets/design.jpeg",
+        content:
+          "Interested in a new look for your brand? N/S has the design skills to create a new brand profile.",
+      },
+      {
+        serviceType: "Copywriting",
+        name: "Scott Alton",
+        content:
+          "Worried about your spelling and grammar? Let our in-house copywriters create polished content.",
+        image: "./Assets/copywriting.jpeg",
+      },
+    ];
+
+    let nickServices = [
+      {
+        serviceType: "Software Development",
+        name: "Nicholas Sturch-Flint",
+        image:
+          "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        content:
+          "Have an idea for an app or website? Reach out to us and we can give you a quote on it!",
+      },
+      {
+        serviceType: "Application Support",
+        name: "Nicholas Sturch-Flint",
+        image:
+          "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        content:
+          "Already have a system in place, but don't know how (or don't have time!) to keep it updated? \
+                    After some information collection about the system, we'll be able to help you keep it in check!",
+      },
+      {
+        serviceType: "System Development Lifecycle",
+        name: "Nicholas Sturch-Flint",
+        image:
+          "https://ak.picdn.net/shutterstock/videos/1020779143/thumb/11.jpg",
+        content:
+          "Have a system that you want to build but don't know where to start? Don't worry! With continued communication \
+                    we will help to walk you through the life-cycle as well as building your dream project!",
+      },
+    ];
+    
+ %> 
+ 
+ <h1>Our Services</h1>
+
+<div class="container mx-auto row g-lg-3 justify-content-center projects">
+  <%
+    
+    let servicesHTML = ''; 
+    
+    [...scottServices, ...nickServices].forEach(service => {
+          const { serviceType, name, content, image } = service;
+           servicesHTML += `
+           <div class="card text-center col-md-5 col-lg-3 p-4 mb-5 mx-2">
+              <h4>${serviceType}</h4>
+              <h6>${name}</h6>
+              <p>${content}</p>
+              <img src="${image}" class="mx-auto services-img w-100 mb-3" />
+            </div>
+          `;
+        });
+
+        
+  %>
+
+  <%- servicesHTML  %> 
+</div>
