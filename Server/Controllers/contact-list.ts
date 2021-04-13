@@ -54,9 +54,11 @@ export function ProcessEditPage(req:Request, res:Response, next:NextFunction):vo
   let updatedContact = new Contact
   ({
     "_id": id,
-    "FullName": req.body.FullName,
+    "FirstName": req.body.FirstName,
+    "LastName": req.body.LastName,
     "ContactNumber": req.body.ContactNumber,
-    "EmailAddress": req.body.EmailAddress
+    "EmailAddress": req.body.EmailAddress,
+    "Message": req.body.Message
   });
 
   // db.contacts.update({"_id":id} and then update)
@@ -76,7 +78,8 @@ export function ProcessAddPage(req:Request, res:Response, next:NextFunction):voi
     // instantiate a new Contact
   let newContact = new Contact
   ({
-    "FullName": req.body.FullName,
+    "FirstName": req.body.FirstName,
+    "LastName": req.body.LastName,
     "ContactNumber": req.body.ContactNumber,
     "EmailAddress": req.body.EmailAddress
   });

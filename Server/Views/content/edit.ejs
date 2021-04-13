@@ -8,25 +8,25 @@
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">First Name </span>
               <input id="firstName" type="text" class="form-control" aria-label="First Name" aria-describedby="First Name Input"
-              name="firstName" required>
+              name="FirstName" value="<%= contact.FirstName %>" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Last Name </span>
               <input id="lastName" type="text" class="form-control" aria-label="Last Name" aria-describedby="Last Name Input"
-              name="lastName" required>
+              name="LastName" value="<%= contact.LastName %>" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Contact Number</span>
               <input id="contactNumber" type="tel" class="form-control" aria-label="Contact Number" aria-describedby="Contact Number Input"
-              name="contactNumber" value="<%= contact.ContactNumber %>" required>
+              name="ContactNumber" value="<%= contact.ContactNumber %>" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
               <input id="emailAddress" type="email" class="form-control" aria-label="Email Address" aria-describedby="Email Address Input"
-              name="emailAddress" value="<%= contact.EmailAddress %>" required>
+              name="EmailAddress" value="<%= contact.EmailAddress %>" required>
             </div>
 
             <% if(title == "Edit") { %>

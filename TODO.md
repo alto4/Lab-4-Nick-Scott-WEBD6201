@@ -21,7 +21,7 @@
 
 - Services Page
 
-  - Short list of services offered (3 each)
+  - Short list of services offered (3 each) 💯
   - Images
 
 - Contact Page
@@ -43,19 +43,19 @@
   - Install Mongoose 💯
   - Create a Contact Schema to enable CRUD (modify Router and Controller)
   - Install Passport using npm 💯
-  - Create a User Schema to enable Login, Registration and Logout functionality
-  - Create an AuthGuard Method to secure pages from un-authenticated users
+  - Create a User Schema to enable Login, Registration and Logout functionality💯
+  - Create an AuthGuard Method to secure pages from un-authenticated users💯
 
 - Server Side Routing and Content Views
 
-  - Each page in the website will be split into its own partial file and reside in the Views/partials (components/content)
-  - Express route must exist for each page (router.get and router.post)
-  - Page logic should reside in a controller file name index.js (index controller)
+  - Each page in the website will be split into its own partial file and reside in the Views/partials (components/content)💯
+  - Express route must exist for each page (router.get and router.post)💯
+  - Page logic should reside in a controller file name index.js (index controller)💯
 
 - Site Security - Login/Register Views
 
-  - Login view should have a username and password field, and a login button (and a link to redirect to the register page)
-  - Register view should allow the user to input their information (first and last name, email, username and password) as well as a register button (success will create a new user)
+  - Login view should have a username and password field, and a login button (and a link to redirect to the register page)💯
+  - Register view should allow the user to input their information (first and last name, email, username and password) as well as a register button (success will create a new user) TODO 
   - DB will contain a user collection. the user Schema will include the display name (user first and last name)
   - If the user is authenticated, they will be redirected to the Business Contacts List View (a collection of all contacts), if the login fails, they are redirected to the login page
   - if an un-authenticated user tries to navigate to business contact page, they should be redirected to the login page

@@ -8,6 +8,7 @@ const app_1 = __importDefault(require("./Server/Config/app"));
 const debug_1 = __importDefault(require("debug"));
 debug_1.default('week10a:server');
 const http_1 = __importDefault(require("http"));
+const express_1 = __importDefault(require("express"));
 let port = normalizePort(process.env.PORT || '3000');
 app_1.default.set('port', port);
 let server = http_1.default.createServer(app_1.default);
@@ -51,4 +52,5 @@ function onListening() {
         : 'port ' + addr.port;
     debug_1.default('Listening on ' + bind);
 }
+app_1.default.use(express_1.default.static('/publlic/images'));
 //# sourceMappingURL=server.js.map

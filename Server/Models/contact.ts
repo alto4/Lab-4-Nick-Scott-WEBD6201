@@ -3,9 +3,12 @@ const Schema = mongoose.Schema;
 
 const ContactSchema = new Schema
 ({
-    FullName: String,
+    //FullName: String,
+    FirstName: String,
+    LastName: String,
     EmailAddress: String,
-    ContactNumber: String
+    ContactNumber: String,
+    Message: String
 },
 {
     collection: "contacts"
