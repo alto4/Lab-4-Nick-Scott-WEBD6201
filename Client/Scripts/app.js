@@ -1,13 +1,26 @@
 "use strict";
 var core;
 (function (core) {
-    function testFullName() {
+    function testFirstName() {
         let messageArea = $("#messageArea").hide();
-        let fullNamePattern = /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/;
-        $("#fullName").on("blur", function () {
-            if (!fullNamePattern.test($(this).val().toString())) {
+        let firstNamePattern = /([A-Z][a-z]{1,25})/;
+        $("#firstName").on("blur", function () {
+            if (!firstNamePattern.test($(this).val().toString())) {
                 $(this).trigger("focus").trigger("select");
-                messageArea.show().addClass("alert alert-danger").text("Please enter a valid Full Name. This must include at least a Capitalized first name followed by a Capitlalized last name.");
+                messageArea.show().addClass("alert alert-danger").text("Please enter a valid First Name.");
+            }
+            else {
+                messageArea.removeAttr("class").hide();
+            }
+        });
+    }
+    function testLastName() {
+        let messageArea = $("#messageArea").hide();
+        let lastNamePattern = /([A-Z][a-z]{1,25})/;
+        $("#lastName").on("blur", function () {
+            if (!lastNamePattern.test($(this).val().toString())) {
+                $(this).trigger("focus").trigger("select");
+                messageArea.show().addClass("alert alert-danger").text("Please enter a valid Last Name.");
             }
             else {
                 messageArea.removeAttr("class").hide();
@@ -41,7 +54,8 @@ var core;
         });
     }
     function formValidation() {
-        testFullName();
+        testFirstName();
+        testLastName();
         testContactNumber();
         testEmailAddress();
     }
@@ -49,17 +63,20 @@ var core;
         formValidation();
         $("#sendButton").on("click", (event) => {
             let subscribeCheckbox = $("#subscribeCheckbox")[0];
-            let fullName = $("#fullName")[0];
+            let firstName = $("#firstName")[0];
+            let lastName = $("#lastName")[0];
             let contactNumber = $("#contactNumber")[0];
             let emailAddress = $("#emailAddress")[0];
+            let message = $("#message")[0];
             if (subscribeCheckbox.checked) {
-                let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
+                let contact = new core.Contact(firstName.value, lastName.value, contactNumber.value, emailAddress.value, message.value);
+                console.log(contact.toString());
                 if (contact.serialize()) {
-                    let key = contact.FullName.substring(0, 1) + Date.now();
+                    let key = contact.FirstName.substring(0, 1) + Date.now();
                     localStorage.setItem(key, contact.serialize());
                 }
             }
-            location.href = '/contact';
+            location.href = '/';
         });
     }
     function displayContactList() {

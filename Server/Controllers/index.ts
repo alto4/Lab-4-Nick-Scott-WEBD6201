@@ -4,6 +4,7 @@ import passport from 'passport';
 
 // create the User Model Instance
 import User from '../Models/user';
+import Contact from '../Models/contact';
 
 // Util Functions
 import { UserDisplayName } from '../Util/index';
@@ -137,5 +138,30 @@ export function ProcessLogoutPage(req:Request, res:Response, next:NextFunction):
 
 export function ProcessContactPage(req:Request, res:Response, next:NextFunction): void
 {
-    res.render('index', { title: 'Home', page: 'home', displayName: UserDisplayName(req)});
+
+    // instantiate a new Contact
+    let newContact = new Contact
+    ({
+        "FirstName": req.body.FirstName,
+        "LastName": req.body.LastName,
+        "ContactNumber": req.body.ContactNumber,
+        "EmailAddress": req.body.EmailAddress,
+        "Message": req.body.Message
+    });
+
+    // db.contacts.insert({contact data is here...})
+    Contact.create(newContact, (err) => {
+        if(err)
+        {
+          console.error(err);
+          res.end(err);
+        }
+        
+        res.redirect('/home');
+        //res.render('index', { title: 'Home', page: 'home', displayName: UserDisplayName(req)
+    });
+
+    
+
+    
 }

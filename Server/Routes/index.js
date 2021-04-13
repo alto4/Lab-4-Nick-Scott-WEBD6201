@@ -13,6 +13,7 @@ router.get('/about', index_1.DisplayAboutPage);
 router.get('/services', index_1.DisplayServicesPage);
 router.get('/projects', index_1.DisplayProjectsPage);
 router.get('/contact', index_1.DisplayContactPage);
+router.post('/contact', index_1.ProcessContactPage);
 router.get('/login', index_1.DisplayLoginPage);
 router.get('/register', index_1.DisplayRegisterPage);
 router.post('/login', index_1.ProcessLoginPage);

@@ -27,10 +27,10 @@
 - Contact Page
 
   - Contains our Contact Information to the top 💯
-  - Create a Contact Class
-  - Should act like a register Page
+  - Create a Contact Class 💯
+  - Should act like a register Page 💯
   - Should allow the user to input First Name, Last NAme, Contact Number, Email Address, and an optional message 💯
-  - Doesn't need to email but does need to record their Information
+  - Doesn't need to email but does need to record their Information 💯
 
 - Express Server Site Structure
 
@@ -55,15 +55,15 @@
 - Site Security - Login/Register Views
 
   - Login view should have a username and password field, and a login button (and a link to redirect to the register page)💯
-  - Register view should allow the user to input their information (first and last name, email, username and password) as well as a register button (success will create a new user) TODO 
+  - Register view should allow the user to input their information (first and last name, email, username and password) as well as a register button (success will create a new user) TODO
   - DB will contain a user collection. the user Schema will include the display name (user first and last name)
-  - If the user is authenticated, they will be redirected to the Business Contacts List View (a collection of all contacts), if the login fails, they are redirected to the login page
+  - If the user is authenticated, they will be redirected to the Business Contacts List View (a collection of all contacts), if the login fails, they are redirected to the login page💯
   - if an un-authenticated user tries to navigate to business contact page, they should be redirected to the login page
 
 - Business Contacts View Page
 
-  - List of all existing contacts should appear on this page (Name, number and email)
-  - Allow the user to edit and delete an existing contact
+  - List of all existing contacts should appear on this page (Name, number and email)💯
+  - Allow the user to edit and delete an existing contact💯
   - Delete, removes the contact from the dbe
     -Edit, transfers the contact info to a new 'register' page where the user can update the info (looks the same as add contact)
   - Include an add contact (looks the same as edit contact)

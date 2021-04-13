@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessContactPage = exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.ProcessLoginPage = exports.DisplayRegisterPage = exports.DisplayLoginPage = exports.DisplayContactPage = exports.DisplayProjectsPage = exports.DisplayServicesPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../Models/user"));
+const contact_1 = __importDefault(require("../Models/contact"));
 const index_1 = require("../Util/index");
 function DisplayHomePage(req, res, next) {
     res.render('index', { title: 'Home', page: 'home', displayName: index_1.UserDisplayName(req) });
@@ -99,7 +100,20 @@ function ProcessLogoutPage(req, res, next) {
 }
 exports.ProcessLogoutPage = ProcessLogoutPage;
 function ProcessContactPage(req, res, next) {
-    res.render('index', { title: 'Home', page: 'home', displayName: index_1.UserDisplayName(req) });
+    let newContact = new contact_1.default({
+        "FirstName": req.body.FirstName,
+        "LastName": req.body.LastName,
+        "ContactNumber": req.body.ContactNumber,
+        "EmailAddress": req.body.EmailAddress,
+        "Message": req.body.Message
+    });
+    contact_1.default.create(newContact, (err) => {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/home');
+    });
 }
 exports.ProcessContactPage = ProcessContactPage;
 //# sourceMappingURL=index.js.map

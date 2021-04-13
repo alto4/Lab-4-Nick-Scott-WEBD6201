@@ -81,7 +81,8 @@ export function ProcessAddPage(req:Request, res:Response, next:NextFunction):voi
     "FirstName": req.body.FirstName,
     "LastName": req.body.LastName,
     "ContactNumber": req.body.ContactNumber,
-    "EmailAddress": req.body.EmailAddress
+    "EmailAddress": req.body.EmailAddress,
+    "Message": req.body.Message
   });
 
   // db.contacts.insert({contact data is here...})

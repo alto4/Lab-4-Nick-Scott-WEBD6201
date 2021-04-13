@@ -1,10 +1,10 @@
                  <div class="row justify-content-lg-center g-3">
           <h1>Contact Us</h1>
           <div id="messageArea"></div>
-          <form class="col-lg-6 col-md-10 col-sm-10">
+          <form method="POST" class="col-lg-6 col-md-10 col-sm-10">
 
             <div class="col-lg mb-3">
-              <p>If you want to reach out to us, you can email us at:</p><br/><hr/>
+              <p>If you want to reach out to us, you can email us at:</p><hr/>
               <h5>Nick Sturch-Flint: nicholas.sturchflint@dcmail.ca</h5><hr/>
               <h5>Scott Alton      : scott.alton@dcmail.ca</h5>
             </div><hr/>
@@ -16,30 +16,30 @@
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">First Name </span>
               <input id="firstName" type="text" class="form-control" aria-label="First Name" aria-describedby="First Name Input"
-              name="firstName" required>
+              name="FirstName" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Last Name </span>
               <input id="lastName" type="text" class="form-control" aria-label="Last Name" aria-describedby="Last Name Input"
-              name="lastName" required>
+              name="LastName" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Contact Number</span>
               <input id="contactNumber" type="tel" class="form-control" aria-label="Contact Number" aria-describedby="Contact Number Input"
-              name="contactNumber" required>
+              name="ContactNumber" required>
             </div>
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
               <input id="emailAddress" type="email" class="form-control" aria-label="Email Address" aria-describedby="Email Address Input"
-              name="emailAddress" required>
+              name="EmailAddress" required>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">Your Message</span>
-              <textarea id="message" class="form-control" aria-label="With textarea"></textarea>
+              <span class="input-group-text">Your Optional Message</span>
+              <textarea id="message" name="Message" class="form-control" aria-label="With textarea"></textarea>
             </div>
   
             <!-- LOOK FOR AN IF STATEMENT REGARDING THIS CHECKBOX - it will be along the lines of IF checkbox checked, add
@@ -50,9 +50,11 @@
             </div-->
 
             <div class="text-end mt-2">
-              <button id="sendButton" type="button" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Send</button>
+              <button id="sendButton" type="submit" class="btn btn-primary"><i class="fas fa-envelope fa-lg"></i> Send</button>
               <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fas fa-undo fa-lg"></i> Cancel</button>
             </div>
             
           </form>
+
+          <div class="my-5"></div>
         </div>

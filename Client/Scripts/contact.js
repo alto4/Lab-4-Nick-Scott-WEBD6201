@@ -2,16 +2,24 @@
 var core;
 (function (core) {
     class Contact {
-        constructor(fullName = "", contactNumber = "", emailAddress = "") {
-            this.FullName = fullName;
+        constructor(firstName = "", lastName = "", contactNumber = "", emailAddress = "", message = "") {
+            this.FirstName = firstName;
+            this.LastName = lastName;
             this.ContactNumber = contactNumber;
             this.EmailAddress = emailAddress;
+            this.Message = message;
         }
-        get FullName() {
-            return this.m_fullName;
+        get FirstName() {
+            return this.m_firstName;
         }
-        set FullName(value) {
-            this.m_fullName = value;
+        set FirstName(value) {
+            this.m_firstName = value;
+        }
+        get LastName() {
+            return this.m_firstName;
+        }
+        set LastName(value) {
+            this.m_firstName = value;
         }
         get ContactNumber() {
             return this.m_contactNumber;
@@ -25,24 +33,34 @@ var core;
         set EmailAddress(value) {
             this.m_emailAddress = value;
         }
+        get Message() {
+            return this.m_message;
+        }
+        set Message(value) {
+            this.m_message = value;
+        }
         toString() {
-            return `Full Name     : ${this.FullName} \nContact Number: ${this.ContactNumber}\nEmail Address : ${this.EmailAddress}`;
+            return `Full Name     : ${this.FirstName} ${this.LastName} \nContact Number: ${this.ContactNumber}\nEmail Address : ${this.EmailAddress}  Message: ${this.Message}`;
         }
         toJSON() {
             return {
-                "FullName": this.FullName,
+                "FirstName": this.FirstName,
+                "LastName": this.LastName,
                 "ContactNumber": this.ContactNumber,
-                "EmailAddress": this.EmailAddress
+                "EmailAddress": this.EmailAddress,
+                "Message": this.Message
             };
         }
         fromJSON(data) {
-            this.FullName = data.FullName;
+            this.FirstName = data.FirstName;
+            this.LastName = data.LastName;
             this.ContactNumber = data.ContactNumber;
             this.EmailAddress = data.EmailAddress;
+            this.Message = data.Message;
         }
         serialize() {
-            if (this.FullName !== "" && this.ContactNumber !== "" && this.EmailAddress !== "") {
-                return `${this.FullName},${this.ContactNumber},${this.EmailAddress}`;
+            if (this.FirstName !== "" && this.LastName !== "" && this.ContactNumber !== "" && this.EmailAddress !== "") {
+                return `${this.FirstName},${this.LastName},${this.ContactNumber},${this.EmailAddress},${this.Message}`;
             }
             else {
                 console.error("One or more properties of the Contact is empty");
@@ -51,9 +69,10 @@ var core;
         }
         deserialize(data) {
             let propertyArray = data.split(",");
-            this.FullName = propertyArray[0];
-            this.ContactNumber = propertyArray[1];
-            this.EmailAddress = propertyArray[2];
+            this.FirstName = propertyArray[0];
+            this.LastName = propertyArray[1];
+            this.ContactNumber = propertyArray[2];
+            this.EmailAddress = propertyArray[3];
         }
     }
     core.Contact = Contact;

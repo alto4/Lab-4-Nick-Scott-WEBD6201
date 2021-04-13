@@ -54,7 +54,8 @@ function ProcessAddPage(req, res, next) {
         "FirstName": req.body.FirstName,
         "LastName": req.body.LastName,
         "ContactNumber": req.body.ContactNumber,
-        "EmailAddress": req.body.EmailAddress
+        "EmailAddress": req.body.EmailAddress,
+        "Message": req.body.Message
     });
     contact_1.default.create(newContact, (err) => {
         if (err) {
