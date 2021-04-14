@@ -29,7 +29,7 @@ import * as DBConfig from './db';
 mongoose.connect(DBConfig.RemoteURI, { useNewUrlParser: true, useUnifiedTopology: true }); //change LocalURI to RemoteURI for live hosting
 
 // Enable static resources for use in EJS files
-app.use(express.static('../../publlic/images'));
+app.use(express.static(path.join(__dirname, '../public/')));
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
