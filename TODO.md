@@ -35,13 +35,13 @@
 - Express Server Site Structure
 
   - Generate site structure with Express Generator 💯
-  - Javascript, CSS and Multimedia Asset Files should be moved to seperate folders within the public folder TODO -> Extract css from h1s
+    **\*\*** - Javascript, CSS and Multimedia Asset Files should be moved to seperate folders within the public folder TODO -> Extract css from h1s
 
 - MongoDB Server, Mongoose and Passport
 
   - Create a DB MongoDB Atlas 💯
   - Install Mongoose 💯
-  - Create a Contact Schema to enable CRUD (modify Router and Controller)
+  - Create a Contact Schema to enable CRUD (modify Router and Controller) 💯
   - Install Passport using npm 💯
   - Create a User Schema to enable Login, Registration and Logout functionality💯
   - Create an AuthGuard Method to secure pages from un-authenticated users💯
@@ -70,6 +70,5 @@
 
 - Update View (Edit Page?)
   - Allow the user to update a contact details💯
-  - Include an edit button💯
-  - Include a delete button, which will delete the contact and redirect them to business contact view page💯
-  - Include a cancel button
+  - Include an edit button💯 \***\*\*\*\*\*\*\***- Include a delete button, which will delete the contact and redirect them to business contact view page
+  - Include a cancel button💯
