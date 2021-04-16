@@ -99,5 +99,3 @@ function onListening():void
   debug('Listening on ' + bind);
 }
 
-// Enable static resources for use in EJS files
-app.use(express.static('/publlic/images'));
