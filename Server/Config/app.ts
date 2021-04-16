@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, '../public/')));
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-  console.log(`Connected to MongoDB at: ${DBConfig.localHost}`);  //remove local from localHost to host live
+  console.log(`Connected to MongoDB at: ${DBConfig.Host}`);  //remove local from localHost to host live
 });
 
 // view engine setup
